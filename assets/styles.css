@@ -11,7 +11,7 @@
   box-sizing: border-box; /* 1 */
   border-width: 0; /* 2 */
   border-style: solid; /* 2 */
-  border-color: #e5e7eb; /* 2 */
+  border-color: currentColor; /* 2 */
 }
 
 ::before,
@@ -513,8 +513,19 @@ video {
 .min-h-screen {
   min-height: 100vh;
 }
+.flex-1 {
+  flex: 1 1 0%;
+}
 .flex-col {
   flex-direction: column;
+}
+.bg-primary-bg {
+  --tw-bg-opacity: 1;
+  background-color: hsl(var(--color-primary-bg) / var(--tw-bg-opacity));
+}
+.text-primary-fg {
+  --tw-text-opacity: 1;
+  color: hsl(var(--color-primary-fg) / var(--tw-text-opacity));
 }
 .outline-none {
   outline: 2px solid transparent;

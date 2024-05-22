@@ -16,14 +16,17 @@
       window.addEventListener('load', () => document.documentElement.classList.add('ready'))
     </script>
 
+    {% liquid
+      render 'css-globals'
+    %}
     {{ 'styles.css' | asset_url | stylesheet_tag }}
 
     {{ content_for_header }}
 
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
   </head>
-  <body class="min-h-screen">
-    <main id="mainContent" tabindex="-1" class="flex flex-col outline-none">
+  <body class="min-h-screen flex flex-col">
+    <main id="mainContent" tabindex="-1" class="flex-1 outline-none bg-primary-bg text-primary-fg">
       {{ content_for_layout }}
     </main>
 

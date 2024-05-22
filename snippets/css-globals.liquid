@@ -1,0 +1,19 @@
+{% liquid
+  assign hsl_primary_bg = shop.brand.colors.primary[0].background | color_to_hsl | replace: 'hsl(', '' | replace: ')', '' | split: ','
+  assign hsl_primary_fg = shop.brand.colors.primary[0].foreground | color_to_hsl | replace: 'hsl(', '' | replace: ')', '' | split: ','
+  assign hsl_secondary_bg = shop.brand.colors.secondary[0].background | color_to_hsl | replace: 'hsl(', '' | replace: ')', '' | split: ','
+  assign hsl_secondary_fg = shop.brand.colors.secondary[0].foreground | color_to_hsl | replace: 'hsl(', '' | replace: ')', '' | split: ','
+  assign hsl_accent = shop.brand.colors.secondary[1].background | color_to_hsl | replace: 'hsl(', '' | replace: ')', '' | split: ','
+%}
+
+{% style %}
+@layer base {
+  :root {
+    --color-primary-bg: {{ hsl_primary_bg[0] | append: 'deg' }} {{ hsl_primary_bg[1] }} {{ hsl_primary_bg[2] }};
+    --color-primary-fg: {{ hsl_primary_fg[0] | append: 'deg' }} {{ hsl_primary_fg[1] }} {{ hsl_primary_fg[2] }};
+    --color-secondary-bg: {{ hsl_secondary_bg[0] | append: 'deg' }} {{ hsl_secondary_bg[1] }} {{ hsl_secondary_bg[2] }};
+    --color-secondary-fg: {{ hsl_secondary_fg[0] | append: 'deg' }} {{ hsl_secondary_fg[1] }} {{ hsl_secondary_fg[2] }};
+    --color-accent: {{ hsl_accent[0] | append: 'deg' }} {{ hsl_accent[1] }} {{ hsl_accent[2] }};
+  }
+}
+{% endstyle %}

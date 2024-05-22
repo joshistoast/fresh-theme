@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="canonical" href="{{ canonical_url }}">
+
+    {% # SEO %}
+    <title>{{ page_title }}</title>
+
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+    <script>
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'js')
+      window.addEventListener('load', () => document.documentElement.classList.add('ready'))
+    </script>
+
+    {{ content_for_header }}
+  </head>
+  <body>
+    <main id="main">
+      {{ content_for_layout }}
+    </main>
+
+    <script>
+      window.shopUrl = '{{ request.origin }}'
+      window.routes = {
+        cart_add_url: '{{ routes.cart_add_url }}',
+        cart_change_url: '{{ routes.cart_change_url }}',
+        cart_update_url: '{{ routes.cart_update_url }}',
+        cart_url: '{{ routes.cart_url }}',
+        predictive_search_url: '{{ routes.predictive_search_url }}',
+        product_recommendations_url: '{{ routes.product_recommendations_url }}'
+      }
+    </script>
+  </body>
+</html>

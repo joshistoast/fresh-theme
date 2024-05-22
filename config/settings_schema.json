@@ -1,0 +1,123 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Fresh",
+    "theme_version": "0.0",
+    "theme_author": "Josh Corbett",
+    "theme_documentation_url": "https://flagnorfail.com",
+    "theme_support_email": "josh@flagnorfail.com"
+  },
+  {
+    "name": "Branding",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Assets"
+      },
+      {
+        "type": "image_picker",
+        "id": "desktop_logo",
+        "label": "Desktop Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_logo",
+        "label": "Mobile Logo"
+      }
+    ]
+  },
+  {
+    "name": "Color Schemes",
+    "settings": [
+      {
+        "type": "color_scheme_group",
+        "id": "color_schemes",
+        "definition": [
+          {
+            "type": "header",
+            "content": "Base Colors"
+          },
+          {
+            "type": "color",
+            "id": "primary",
+            "label": "Primary Color",
+            "default": "#5382b8"
+          },
+          {
+            "type": "color",
+            "id": "secondary",
+            "label": "Secondary Color",
+            "default": "#989bd4"
+          },
+          {
+            "type": "color",
+            "id": "accent",
+            "label": "Accent Color",
+            "default": "#7970c4"
+          },
+          {
+            "type": "color",
+            "id": "background",
+            "label": "Background Color",
+            "default": "#e8e8e8"
+          },
+          {
+            "type": "header",
+            "content": "Typography"
+          },
+          {
+            "type": "color",
+            "id": "text",
+            "label": "Text Color",
+            "default": "#333"
+          }
+        ],
+        "role": {
+          "background": "background",
+          "text": "text",
+          "primary_button": "primary",
+          "on_primary_button": "text",
+          "primary_button_border": "primary",
+          "secondary_button": "secondary",
+          "on_secondary_button": "text",
+          "secondary_button_border": "secondary",
+          "links": "accent",
+          "icons": "text"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "type_font_header",
+        "label": "Header Font",
+        "default": "inter"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_font_body",
+        "label": "Body Font",
+        "default": "inter"
+      }
+    ]
+  },
+  {
+    "name": "Currency Format",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Currency Codes"
+      },
+      {
+        "type": "checkbox",
+        "id": "currency_code_enabled",
+        "label": "Show currency codes",
+        "info": "Cart and checkout prices always show currency codes. Example: $1.00 USD.",
+        "default": true
+      }
+    ]
+  }
+]

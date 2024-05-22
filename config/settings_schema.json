@@ -94,13 +94,13 @@
         "type": "font_picker",
         "id": "type_font_header",
         "label": "Header Font",
-        "default": "inter"
+        "default": "inter_n6"
       },
       {
         "type": "font_picker",
         "id": "type_font_body",
         "label": "Body Font",
-        "default": "inter"
+        "default": "inter_n4"
       }
     ]
   },

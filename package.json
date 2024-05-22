@@ -1,0 +1,22 @@
+{
+  "name": "fresh-theme",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Josh Corbett",
+  "scripts": {
+    "dev": "pnpm run shopify:dev & pnpm run watch",
+    "shopify:dev": "shopify theme dev -e development",
+    "watch": "vite build -w",
+    "build": "vite build --minify"
+  },
+  "devDependencies": {
+    "@shopify/cli": "^3.60.1",
+    "@shopify/prettier-plugin-liquid": "^1.5.0",
+    "@shopify/theme": "^3.58.2",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "prettier": "^3.2.5",
+    "tailwindcss": "^3.4.3",
+    "vite": "^5.2.11"
+  }
+}

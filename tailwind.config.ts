@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import typography from '@tailwindcss/typography';
 
 export default {
   content: ['./*/*.{liquid,json,js}'],
@@ -11,5 +12,7 @@ export default {
       'accent-bg': 'hsl(var(--color-accent-bg) / <alpha-value>)',
     }
   },
-  plugins: [],
+  plugins: [
+    typography,
+  ],
 } satisfies Config;

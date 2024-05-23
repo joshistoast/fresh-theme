@@ -13,6 +13,7 @@
     "@shopify/cli": "^3.60.1",
     "@shopify/prettier-plugin-liquid": "^1.5.0",
     "@shopify/theme": "^3.58.2",
+    "@tailwindcss/typography": "^0.5.13",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",

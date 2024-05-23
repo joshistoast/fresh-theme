@@ -10,19 +10,20 @@
     .color-{{ scheme.id }} {
       {%- liquid
         # Create dynamic hsl values from the color scheme
+        # TODO: Support background gradients
 
         assign color_background = scheme.settings.background
         assign color_text = scheme.settings.text
 
         assign color_base_100 = color_background
-        assign color_base_200 = color_background | color_darken: 5
-        assign color_base_300 = color_background | color_darken: 10
-
-        # Determine if scheme is light or dark
         if color_base_100.lightness > 50
           assign color_light_dark = 'light'
+          assign color_base_200 = color_base_100 | color_darken: 5
+          assign color_base_300 = color_base_100 | color_darken: 10
         else
           assign color_light_dark = 'dark'
+          assign color_base_200 = color_base_100 | color_lighten: 5
+          assign color_base_300 = color_base_100 | color_lighten: 10
         endif
 
         # Neutral color

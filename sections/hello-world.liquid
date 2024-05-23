@@ -1,18 +1,30 @@
-<section class="color-{{ section.settings.color_scheme.id }} bg-base-100 text-base-content flex flex-col gap-4">
-  <div class="prose">
-    <h1>
-      {{ section.settings.heading | default: 'Hello World' }}
-    </h1>
-    <p>Lorem ipsum dolor sit amet <a href="#">Link</a></p>
-  </div>
-  <div class="flex gap-2">
-    <button class="px-4 py-2 bg-primary text-primary-content">Primary Button</button>
-    <button class="px-4 py-2 bg-secondary text-secondary-content">Secondary Button</button>
-    <button class="px-4 py-2 bg-accent text-accent-content">Accent Button</button>
-  </div>
+<section class="color-{{ section.settings.color_scheme.id }} bg-base-100 text-base-content">
+  <div class="container mx-auto p-6 flex flex-col gap-4">
+    <div class="prose">
+      <h1>
+        {{ section.settings.heading | default: 'Hello World' }}
+      </h1>
+      <p>Lorem ipsum dolor sit amet <a href="#">Link</a></p>
+    </div>
+    <div class="flex gap-2">
+      <button class="px-4 py-2 bg-primary text-primary-content hover:bg-primary/80">Primary Button</button>
+      <button class="px-4 py-2 bg-secondary text-secondary-content hover:bg-secondary/80">Secondary Button</button>
+      <button class="px-4 py-2 bg-accent text-accent-content hover:bg-accent/80">Accent Button</button>
+    </div>
 
-  <div class="bg-neutral text-neutral-content">
-    <p>Neutral Content</p>
+    <div class="bg-base-100 p-4 border border-base-300">
+      <p>Base 100 Content</p>
+      <div class="bg-base-200 p-4">
+        <p>Base 200 Content</p>
+        <div class="bg-base-300 p-4">
+          <p>Base 300 Content</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-neutral text-neutral-content py-2 px-3">
+      <p>Neutral Content</p>
+    </div>
   </div>
 </section>
 

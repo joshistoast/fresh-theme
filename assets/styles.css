@@ -11,7 +11,7 @@
   box-sizing: border-box; /* 1 */
   border-width: 0; /* 2 */
   border-style: solid; /* 2 */
-  border-color: #e5e7eb; /* 2 */
+  border-color: currentColor; /* 2 */
 }
 
 ::before,
@@ -507,6 +507,39 @@ video {
   --tw-contain-paint:  ;
   --tw-contain-style:  ;
 }
+.container {
+  width: 100%;
+}
+@media (min-width: 640px) {
+
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+
+  .container {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+
+  .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+
+  .container {
+    max-width: 1536px;
+  }
+}
 .prose {
   color: hsl(var(--color-base-content) / 80);
   max-width: 65ch;
@@ -928,6 +961,10 @@ video {
 .prose :where(h1,h2,h3,h4):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
   color: hsl(var(--color-base-content) / 100);
 }
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
 .flex {
   display: flex;
 }
@@ -946,6 +983,13 @@ video {
 .gap-4 {
   gap: 1rem;
 }
+.border {
+  border-width: 1px;
+}
+.border-base-300 {
+  --tw-border-opacity: 1;
+  border-color: hsl(var(--color-base-300) / var(--tw-border-opacity));
+}
 .bg-accent {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--color-accent) / var(--tw-bg-opacity));
@@ -953,6 +997,14 @@ video {
 .bg-base-100 {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--color-base-100) / var(--tw-bg-opacity));
+}
+.bg-base-200 {
+  --tw-bg-opacity: 1;
+  background-color: hsl(var(--color-base-200) / var(--tw-bg-opacity));
+}
+.bg-base-300 {
+  --tw-bg-opacity: 1;
+  background-color: hsl(var(--color-base-300) / var(--tw-bg-opacity));
 }
 .bg-neutral {
   --tw-bg-opacity: 1;
@@ -965,6 +1017,16 @@ video {
 .bg-secondary {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--color-secondary) / var(--tw-bg-opacity));
+}
+.p-4 {
+  padding: 1rem;
+}
+.p-6 {
+  padding: 1.5rem;
+}
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 .px-4 {
   padding-left: 1rem;
@@ -997,4 +1059,20 @@ video {
 .outline-none {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.hover\:bg-accent\/80:hover {
+  background-color: hsl(var(--color-accent) / 0.8);
+}
+
+.hover\:bg-primary\/80:hover {
+  background-color: hsl(var(--color-primary) / 0.8);
+}
+
+.hover\:bg-secondary\/80:hover {
+  background-color: hsl(var(--color-secondary) / 0.8);
+}
+
+.hover\:opacity-80:hover {
+  opacity: 0.8;
 }

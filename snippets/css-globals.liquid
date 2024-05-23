@@ -1,19 +1,19 @@
 {% liquid
-  assign hsl_primary_bg = shop.brand.colors.primary[0].background | color_to_hsl | replace: 'hsl(', '' | replace: ')', '' | split: ','
-  assign hsl_primary_fg = shop.brand.colors.primary[0].foreground | color_to_hsl | replace: 'hsl(', '' | replace: ')', '' | split: ','
-  assign hsl_secondary_bg = shop.brand.colors.secondary[0].background | color_to_hsl | replace: 'hsl(', '' | replace: ')', '' | split: ','
-  assign hsl_secondary_fg = shop.brand.colors.secondary[0].foreground | color_to_hsl | replace: 'hsl(', '' | replace: ')', '' | split: ','
-  assign hsl_accent = shop.brand.colors.secondary[1].background | color_to_hsl | replace: 'hsl(', '' | replace: ')', '' | split: ','
+  assign hsl_primary_bg = shop.brand.colors.primary[0].background
+  assign hsl_primary_fg = shop.brand.colors.primary[0].foreground
+  assign hsl_secondary_bg = shop.brand.colors.secondary[0].background
+  assign hsl_secondary_fg = shop.brand.colors.secondary[0].foreground
+  assign hsl_accent = shop.brand.colors.secondary[1].background
 %}
 
 {% style %}
 @layer base {
   :root {
-    --color-primary-bg: {{ hsl_primary_bg[0] | append: 'deg' }} {{ hsl_primary_bg[1] }} {{ hsl_primary_bg[2] }};
-    --color-primary-fg: {{ hsl_primary_fg[0] | append: 'deg' }} {{ hsl_primary_fg[1] }} {{ hsl_primary_fg[2] }};
-    --color-secondary-bg: {{ hsl_secondary_bg[0] | append: 'deg' }} {{ hsl_secondary_bg[1] }} {{ hsl_secondary_bg[2] }};
-    --color-secondary-fg: {{ hsl_secondary_fg[0] | append: 'deg' }} {{ hsl_secondary_fg[1] }} {{ hsl_secondary_fg[2] }};
-    --color-accent: {{ hsl_accent[0] | append: 'deg' }} {{ hsl_accent[1] }} {{ hsl_accent[2] }};
+    --color-primary-bg: {{ hsl_primary_bg.hue }} {{ hsl_primary_bg.saturation }} {{ hsl_primary_bg.lightness }};
+    --color-primary-fg: {{ hsl_primary_fg.hue }} {{ hsl_primary_fg.saturation }} {{ hsl_primary_fg.lightness }};
+    --color-secondary-bg: {{ hsl_secondary_bg.hue }} {{ hsl_secondary_bg.saturation }} {{ hsl_secondary_bg.lightness }};
+    --color-secondary-fg: {{ hsl_secondary_fg.hue }} {{ hsl_secondary_fg.saturation }} {{ hsl_secondary_fg.lightness }};
+    --color-accent: {{ hsl_accent.hue }} {{ hsl_accent.saturation }} {{ hsl_accent.lightness }};
   }
 }
 {% endstyle %}

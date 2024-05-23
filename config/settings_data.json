@@ -1,5 +1,7 @@
 {
   "current": {
+    "type_font_header": "lobster_n4",
+    "type_font_body": "avenir_next_n5",
     "content_for_index": [
 
     ],
@@ -10,6 +12,7 @@
           "secondary": "#989bd4",
           "accent": "#7970c4",
           "background": "#e8e8e8",
+          "background_gradient": "",
           "text": "#333333"
         }
       },
@@ -19,6 +22,7 @@
           "secondary": "#000000",
           "accent": "#63d9b4",
           "background": "#202128",
+          "background_gradient": "",
           "text": "#e2e4ec"
         }
       }

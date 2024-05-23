@@ -80,5 +80,23 @@
       --color-accent-content: {{ color_accent_content.hue }} {{ color_accent_content.saturation }} {{ color_accent_content.lightness }};
     }
   {% endfor %}
+
+  {% liquid
+    assign font_heading = settings.type_font_header
+    assign font_base = settings.type_font_body
+  %}
+  {{ font_heading | font_face: font_display: 'swap' }}
+  {{ font_base | font_face: font_display: 'swap' }}
+  :root {
+    --font-heading-family: {{ font_heading.family }};
+    --font-heading-family-fallbacks: {{ font_heading.fallback_families }};
+    --font-heading-weight: {{ font_heading.weight }};
+    --font-heading-style: {{ font_heading.style }};
+
+    --font-base-family: {{ font_base.family }};
+    --font-base-family-fallbacks: {{ font_base.fallback_families }};
+    --font-base-weight: {{ font_base.weight }};
+    --font-base-style: {{ font_base.style }};
+  }
 }
 {% endstyle %}

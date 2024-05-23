@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="canonical" href="{{ canonical_url }}">
 
+    <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    {% # theme-check-disable AssetPreload %}
+    <link rel="preload" as="font" href="{{ settings.type_font_header | font_url }}" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="{{ settings.type_font_body | font_url }}" type="font/woff2" crossorigin>
+    {% # theme-check-enable AssetPreload %}
+
     {% # SEO %}
     <title>{{ page_title }}</title>
 

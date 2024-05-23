@@ -58,7 +58,7 @@
             "default": "#e8e8e8"
           },
           {
-            "type": "color",
+            "type": "color_background",
             "id": "background_gradient",
             "label": "Background Gradient"
           },

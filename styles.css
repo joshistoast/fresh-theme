@@ -3,8 +3,18 @@
 @tailwind utilities;
 
 @layer base {
-  html {
+  html,
+  body {
     text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
+    @apply font-base;
+    font-style: var(--font-base-style);
+    font-weight: var(--font-base-weight);
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    @apply font-display;
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
   }
 }

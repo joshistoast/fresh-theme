@@ -1,8 +1,22 @@
 {
   "sections": {
     "main": {
-      "type": "hello-world"
+      "type": "hello-world",
+      "settings": {
+        "heading": "Color Scheme 1",
+        "color_scheme": ""
+      }
+    },
+    "hello_world_EgNbjW": {
+      "type": "hello-world",
+      "settings": {
+        "heading": "Color Scheme 2",
+        "color_scheme": "scheme-4debd382-c0ce-4f51-8458-9946cd9941b2"
+      }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main",
+    "hello_world_EgNbjW"
+  ]
 }

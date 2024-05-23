@@ -1,14 +1,25 @@
 {
   "current": {
+    "content_for_index": [
+
+    ],
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#e8e8e8",
-          "background_gradient": "",
-          "text": "#333333",
           "primary": "#5382b8",
           "secondary": "#989bd4",
-          "accent": "#7970c4"
+          "accent": "#7970c4",
+          "background": "#e8e8e8",
+          "text": "#333333"
+        }
+      },
+      "scheme-4debd382-c0ce-4f51-8458-9946cd9941b2": {
+        "settings": {
+          "primary": "#3f8ce4",
+          "secondary": "#000000",
+          "accent": "#63d9b4",
+          "background": "#202128",
+          "text": "#e2e4ec"
         }
       }
     }

@@ -1,19 +1,83 @@
-{% liquid
-  assign hsl_primary_bg = shop.brand.colors.primary[0].background
-  assign hsl_primary_fg = shop.brand.colors.primary[0].foreground
-  assign hsl_secondary_bg = shop.brand.colors.secondary[0].background
-  assign hsl_secondary_fg = shop.brand.colors.secondary[0].foreground
-  assign hsl_accent = shop.brand.colors.secondary[1].background
-%}
-
 {% style %}
 @layer base {
-  :root {
-    --color-primary-bg: {{ hsl_primary_bg.hue }} {{ hsl_primary_bg.saturation }} {{ hsl_primary_bg.lightness }};
-    --color-primary-fg: {{ hsl_primary_fg.hue }} {{ hsl_primary_fg.saturation }} {{ hsl_primary_fg.lightness }};
-    --color-secondary-bg: {{ hsl_secondary_bg.hue }} {{ hsl_secondary_bg.saturation }} {{ hsl_secondary_bg.lightness }};
-    --color-secondary-fg: {{ hsl_secondary_fg.hue }} {{ hsl_secondary_fg.saturation }} {{ hsl_secondary_fg.lightness }};
-    --color-accent: {{ hsl_accent.hue }} {{ hsl_accent.saturation }} {{ hsl_accent.lightness }};
-  }
+  {%- for scheme in settings.color_schemes -%}
+    {%- # theme-check-disable UnusedAssign -%}
+    {%- assign scheme_classes = scheme_classes | append: ', .color-' | append: scheme.id -%}
+    {%- # theme-check-enable UnusedAssign -%}
+    {%- if forloop.index0 == 0 %}
+    :root,
+    {% endif -%}
+    .color-{{ scheme.id }} {
+      {%- liquid
+        # Create dynamic hsl values from the color scheme
+
+        assign color_background = scheme.settings.background
+        assign color_text = scheme.settings.text
+
+        assign color_base_100 = color_background
+        assign color_base_200 = color_background | color_darken: 5
+        assign color_base_300 = color_background | color_darken: 10
+
+        # Determine if scheme is light or dark
+        if color_base_100.lightness > 50
+          assign color_light_dark = 'light'
+        else
+          assign color_light_dark = 'dark'
+        endif
+
+        # Neutral color
+        assign color_neutral = color_base_100 | color_mix: color_text, 55
+        if color_neutral.lightness > 50
+          assign color_neutral_content = color_neutral | color_darken: 35
+        else
+          assign color_neutral_content = color_neutral | color_lighten: 35
+        endif
+
+        # Primary, Secondary, Accent colors
+        assign color_primary = scheme.settings.primary
+        if color_primary.lightness > 50
+          assign color_primary_content = color_primary | color_darken: 35
+        else
+          assign color_primary_content = color_primary | color_lighten: 50
+        endif
+
+        assign color_secondary = scheme.settings.secondary
+        if color_secondary.lightness > 50
+          assign color_secondary_content = color_secondary | color_darken: 35
+        else
+          assign color_secondary_content = color_secondary | color_lighten: 50
+        endif
+
+        assign color_accent = scheme.settings.accent
+        if color_accent.lightness > 50
+          assign color_accent_content = color_accent | color_darken: 35
+        else
+          assign color_accent_content = color_accent | color_lighten: 50
+        endif
+      -%}
+
+      {%- # Expose dynamic color scheme values to tailwindcss config %}
+      --color-background: {{ color_background.hue }} {{ color_background.saturation }} {{ color_background.lightness }};
+      --color-text: {{ color_text.hue }} {{ color_text.saturation }} {{ color_text.lightness }};
+      --color-heading: {{ color_text.hue }} {{ color_text.saturation }} {{ color_text.lightness }};
+      --color-neutral: {{ color_neutral.hue }} {{ color_neutral.saturation }} {{ color_neutral.lightness }};
+      --color-neutral-content: {{ color_neutral_content.hue }} {{ color_neutral_content.saturation }} {{ color_neutral_content.lightness }};
+      --color-base-100: {{ color_base_100.hue }} {{ color_base_100.saturation }} {{ color_base_100.lightness }};
+      --color-base-200: {{ color_base_200.hue }} {{ color_base_200.saturation }} {{ color_base_200.lightness }};
+      --color-base-300: {{ color_base_300.hue }} {{ color_base_300.saturation }} {{ color_base_300.lightness }};
+      --color-base-content: {{ color_text.hue }} {{ color_text.saturation }} {{ color_text.lightness }};
+
+      --color-scheme: {{ color_light_dark }}; /* light/dark depending on background */
+
+      --color-primary: {{ color_primary.hue }} {{ color_primary.saturation }} {{ color_primary.lightness }};
+      --color-primary-content: {{ color_primary_content.hue }} {{ color_primary_content.saturation }} {{ color_primary_content.lightness }};
+
+      --color-secondary: {{ color_secondary.hue }} {{ color_secondary.saturation }} {{ color_secondary.lightness }};
+      --color-secondary-content: {{ color_secondary_content.hue }} {{ color_secondary_content.saturation }} {{ color_secondary_content.lightness }};
+
+      --color-accent: {{ color_accent.hue }} {{ color_accent.saturation }} {{ color_accent.lightness }};
+      --color-accent-content: {{ color_accent_content.hue }} {{ color_accent_content.saturation }} {{ color_accent_content.lightness }};
+    }
+  {% endfor %}
 }
 {% endstyle %}

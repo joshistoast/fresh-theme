@@ -1,9 +1,19 @@
-<section>
-  {% if section.settings.heading != blank %}
-    <h1>{{ section.settings.heading }}</h1>
-  {% else %}
-    <h1>Hello, world!</h1>
-  {% endif %}
+<section class="color-{{ section.settings.color_scheme.id }} bg-base-100 text-base-content flex flex-col gap-4">
+  <div class="prose">
+    <h1>
+      {{ section.settings.heading | default: 'Hello World' }}
+    </h1>
+    <p>Lorem ipsum dolor sit amet <a href="#">Link</a></p>
+  </div>
+  <div class="flex gap-2">
+    <button class="px-4 py-2 bg-primary text-primary-content">Primary Button</button>
+    <button class="px-4 py-2 bg-secondary text-secondary-content">Secondary Button</button>
+    <button class="px-4 py-2 bg-accent text-accent-content">Accent Button</button>
+  </div>
+
+  <div class="bg-neutral text-neutral-content">
+    <p>Neutral Content</p>
+  </div>
 </section>
 
 {% schema %}
@@ -15,6 +25,12 @@
       "type": "text",
       "id": "heading",
       "label": "Heading"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "scheme-1"
     }
   ],
   "presets": [

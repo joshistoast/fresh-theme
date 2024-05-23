@@ -1,6 +1,32 @@
 {
-  "current": {},
+  "current": {
+    "color_schemes": {
+      "scheme-1": {
+        "settings": {
+          "background": "#e8e8e8",
+          "background_gradient": "",
+          "text": "#333333",
+          "primary": "#5382b8",
+          "secondary": "#989bd4",
+          "accent": "#7970c4"
+        }
+      }
+    }
+  },
   "presets": {
-    "Default": {}
+    "Default": {
+      "color_schemes": {
+        "scheme-1": {
+          "settings": {
+            "background": "#e8e8e8",
+            "background_gradient": "",
+            "text": "#333333",
+            "primary": "#5382b8",
+            "secondary": "#989bd4",
+            "accent": "#7970c4"
+          }
+        }
+      }
+    }
   }
 }

@@ -27,33 +27,33 @@
         endif
 
         # Neutral color
-        assign color_neutral = color_base_100 | color_mix: color_text, 55
+        assign color_neutral = color_base_100 | color_mix: color_text, 75
         if color_neutral.lightness > 50
-          assign color_neutral_content = color_neutral | color_darken: 35
+          assign color_neutral_content = color_neutral | color_darken: 40
         else
-          assign color_neutral_content = color_neutral | color_lighten: 35
+          assign color_neutral_content = color_neutral | color_lighten: 40
         endif
 
         # Primary, Secondary, Accent colors
         assign color_primary = scheme.settings.primary
         if color_primary.lightness > 50
-          assign color_primary_content = color_primary | color_darken: 35
+          assign color_primary_content = color_primary | color_darken: 40
         else
-          assign color_primary_content = color_primary | color_lighten: 50
+          assign color_primary_content = color_primary | color_lighten: 40
         endif
 
         assign color_secondary = scheme.settings.secondary
         if color_secondary.lightness > 50
-          assign color_secondary_content = color_secondary | color_darken: 35
+          assign color_secondary_content = color_secondary | color_darken: 40
         else
-          assign color_secondary_content = color_secondary | color_lighten: 50
+          assign color_secondary_content = color_secondary | color_lighten: 40
         endif
 
         assign color_accent = scheme.settings.accent
         if color_accent.lightness > 50
-          assign color_accent_content = color_accent | color_darken: 35
+          assign color_accent_content = color_accent | color_darken: 40
         else
-          assign color_accent_content = color_accent | color_lighten: 50
+          assign color_accent_content = color_accent | color_lighten: 40
         endif
       -%}
 

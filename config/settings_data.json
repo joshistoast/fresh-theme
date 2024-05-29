@@ -1,5 +1,8 @@
 {
   "current": {
+    "pwa_icon": "shopify:\/\/shop_images\/card_crafter_9000_app_icon_90df614a-20e1-4e2f-960f-43f192c0a9ef.png",
+    "pwa_theme_color": "#3f8ce4",
+    "pwa_background_color": "#e8e8e8",
     "type_font_header": "lobster_n4",
     "type_font_body": "avenir_next_n5",
     "content_for_index": [

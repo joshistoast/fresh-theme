@@ -18,55 +18,33 @@
         "default": true
       },
       {
-        "type": "text",
-        "id": "pwa_name",
-        "label": "PWA Name",
-        "default": "Fresh Theme"
-      },
-      {
-        "type": "textarea",
-        "id": "pwa_description",
-        "label": "PWA Description",
-        "default": "A fresh new modern theme."
-      },
-      {
-        "type": "image_picker",
-        "id": "pwa_icon",
-        "label": "PWA Icon"
-      },
-      {
-        "type": "image_picker",
-        "id": "pwa_maskable_icon",
-        "label": "PWA Maskable Icon",
-        "info": "This icon needs to fit within a variety of shapes and have a transparent background."
-      },
-      {
-        "type": "header",
-        "content": "Colors"
-      },
-      {
-        "type": "color",
-        "id": "pwa_theme_color",
-        "label": "PWA Theme Color",
-        "default": "#1c1c1c",
-        "info": "Do not use dynamic content for this color, it will not work."
-      },
-      {
-        "type": "color",
-        "id": "pwa_background_color",
-        "label": "PWA Background Color",
-        "default": "#ffffff",
-        "info": "Do not use dynamic content for this color, it will not work."
-      },
-      {
-        "type": "header",
-        "content": "Splash Screen"
-      },
-      {
-        "type": "image_picker",
-        "id": "pwa_splash_screen",
-        "label": "PWA Splash Screen",
-        "info": "This image will be displayed when the PWA is launched."
+        "type": "select",
+        "id": "pwa_theme_color_source",
+        "label": "PWA Theme Color Source",
+        "info": "Choose which part of the color scheme to use for the PWA theme color.",
+        "options": [
+          {
+            "label": "Primary Color",
+            "value": "primary"
+          },
+          {
+            "label": "Secondary Color",
+            "value": "secondary"
+          },
+          {
+            "label": "Accent Color",
+            "value": "accent"
+          },
+          {
+            "label": "Background Color",
+            "value": "background"
+          },
+          {
+            "label": "Text Color",
+            "value": "text"
+          }
+        ],
+        "default": "primary"
       }
     ]
   },

@@ -21,9 +21,7 @@
 
   <meta name="theme-color" content="{{ application_scheme.settings.background }}">
 
-  {% # theme-check-disable MissingAsset %}
-  <link rel="manifest" href="{{ 'app.webmanifest' | asset_url }}" type="application/json">
-  {% # theme-check-enable MissingAsset %}
+  {% render 'manifest' %}
 
 {% endif %}
 

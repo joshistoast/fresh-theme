@@ -971,21 +971,54 @@ video {
 .prose :where(h1,h2,h3,h4):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
   color: hsl(var(--color-base-content) / 100);
 }
+.fixed {
+  position: fixed;
+}
+.bottom-2 {
+  bottom: 0.5rem;
+}
+.left-2 {
+  left: 0.5rem;
+}
+.z-50 {
+  z-index: 50;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
 }
+.block {
+  display: block;
+}
 .flex {
   display: flex;
+}
+.hidden {
+  display: none;
+}
+.h-8 {
+  height: 2rem;
 }
 .min-h-screen {
   min-height: 100vh;
 }
+.w-8 {
+  width: 2rem;
+}
 .flex-1 {
   flex: 1 1 0%;
 }
+.list-none {
+  list-style-type: none;
+}
 .flex-col {
   flex-direction: column;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
 }
 .gap-2 {
   gap: 0.5rem;
@@ -993,12 +1026,19 @@ video {
 .gap-4 {
   gap: 1rem;
 }
+.rounded-full {
+  border-radius: 9999px;
+}
 .border {
   border-width: 1px;
 }
 .border-base-300 {
   --tw-border-opacity: 1;
   border-color: hsl(var(--color-base-300) / var(--tw-border-opacity));
+}
+.border-primary-content {
+  --tw-border-opacity: 1;
+  border-color: hsl(var(--color-primary-content) / var(--tw-border-opacity));
 }
 .bg-accent {
   --tw-bg-opacity: 1;
@@ -1034,6 +1074,9 @@ video {
 .p-6 {
   padding: 1.5rem;
 }
+.p-3 {
+  padding: 0.75rem;
+}
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -1045,6 +1088,13 @@ video {
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 .text-accent-content {
   --tw-text-opacity: 1;
@@ -1081,4 +1131,59 @@ video {
 
 .hover\:bg-secondary\/80:hover {
   background-color: hsl(var(--color-secondary) / 0.8);
+}
+
+@media (min-width: 640px) {
+
+  .sm\:block {
+    display: block;
+  }
+
+  .sm\:hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .md\:block {
+    display: block;
+  }
+
+  .md\:hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .lg\:block {
+    display: block;
+  }
+
+  .lg\:hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+
+  .xl\:block {
+    display: block;
+  }
+
+  .xl\:hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 1536px) {
+
+  .\32xl\:block {
+    display: block;
+  }
+
+  .\32xl\:hidden {
+    display: none;
+  }
 }

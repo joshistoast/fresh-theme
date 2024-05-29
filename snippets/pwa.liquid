@@ -1,0 +1,42 @@
+{% comment %}
+  Renders progressive web app related meta tags and links.
+
+  Usage:
+  {% render 'application' %}
+{% endcomment %}
+
+{% liquid
+  assign application_name = shop.name
+  # assign cover_image = shop.brand.cover_image
+  assign application_scheme = settings.color_schemes[0]
+%}
+
+{% if settings.enable_pwa_mode %}
+  <meta name="application-name" content="{{ application_name }}">
+
+  <meta name="apple-mobile-web-app-title" content="{{ application_name }}">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  {% # TODO: Startup image %}
+
+  <meta name="theme-color" content="{{ application_scheme.settings.background }}">
+
+  {% # theme-check-disable MissingAsset %}
+  <link rel="manifest" href="{{ 'app.webmanifest' | asset_url }}" type="application/json">
+  {% # theme-check-enable MissingAsset %}
+
+{% endif %}
+
+{% unless request.design_mode %}
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('{{ 'service-worker.js' | asset_url }}')
+        .catch((error) => console.error('Service Worker registration failed:', error))
+    }
+
+    if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
+      console.log('PWA is already installed')
+    }
+  </script>
+{% endunless %}

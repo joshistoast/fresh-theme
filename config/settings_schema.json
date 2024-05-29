@@ -4,8 +4,71 @@
     "theme_name": "Fresh",
     "theme_version": "0.0",
     "theme_author": "Josh Corbett",
-    "theme_documentation_url": "https:\/\/flagnorfail.com",
+    "theme_documentation_url": "https:\/\/github.com\/joshistoast\/fresh-theme",
     "theme_support_email": "josh@flagnorfail.com"
+  },
+  {
+    "name": "Application",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_pwa_mode",
+        "label": "Enable PWA Mode",
+        "info": "This will enable the PWA mode for the theme.",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "pwa_name",
+        "label": "PWA Name",
+        "default": "Fresh Theme"
+      },
+      {
+        "type": "textarea",
+        "id": "pwa_description",
+        "label": "PWA Description",
+        "default": "A fresh new modern theme."
+      },
+      {
+        "type": "image_picker",
+        "id": "pwa_icon",
+        "label": "PWA Icon"
+      },
+      {
+        "type": "image_picker",
+        "id": "pwa_maskable_icon",
+        "label": "PWA Maskable Icon",
+        "info": "This icon needs to fit within a variety of shapes and have a transparent background."
+      },
+      {
+        "type": "header",
+        "content": "Colors"
+      },
+      {
+        "type": "color",
+        "id": "pwa_theme_color",
+        "label": "PWA Theme Color",
+        "default": "#1c1c1c",
+        "info": "Do not use dynamic content for this color, it will not work."
+      },
+      {
+        "type": "color",
+        "id": "pwa_background_color",
+        "label": "PWA Background Color",
+        "default": "#ffffff",
+        "info": "Do not use dynamic content for this color, it will not work."
+      },
+      {
+        "type": "header",
+        "content": "Splash Screen"
+      },
+      {
+        "type": "image_picker",
+        "id": "pwa_splash_screen",
+        "label": "PWA Splash Screen",
+        "info": "This image will be displayed when the PWA is launched."
+      }
+    ]
   },
   {
     "name": "Branding",

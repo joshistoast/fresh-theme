@@ -17,6 +17,8 @@
 
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
 
+    {% render 'pwa' %}
+
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js')
       window.addEventListener('load', () => document.documentElement.classList.add('ready'))
@@ -35,6 +37,8 @@
     <main id="mainContent" tabindex="-1" class="flex-1 outline-none">
       {{ content_for_layout }}
     </main>
+
+    {% render 'dev-indicator' %}
 
     <script>
       window.shopUrl = '{{ request.origin }}'

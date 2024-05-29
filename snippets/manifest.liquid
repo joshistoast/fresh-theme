@@ -12,7 +12,7 @@
 {
   "name": "{{ shop.name }}",
   "short_name": "{{ shop.name }}",
-  "description": {{ shop.description | json }},
+  "description": "{{ shop.description}}",
   "categories": ["shopping"],
   "theme_color": "{{ color_scheme_default.settings.[settings.pwa_theme_color_source] | color_to_hsl }}",
   "background_color": "{{ color_scheme_default.settings.background | color_to_hsl }}",
@@ -22,50 +22,50 @@
   {%- if shop.brand.square_logo != blank %}
   "icons": [
     {
-      "src": {{ shop.brand.square_logo | image_url: width: 48, height: 48 | prepend: 'https:' | json }},
+      "src": "{{ shop.brand.square_logo | image_url: width: 48, height: 48 | prepend: 'https:' }}",
       "sizes": "48x48",
       "purpose": "any"
     },
     {
-      "src": {{ shop.brand.square_logo | image_url: width: 72, height: 72 | prepend: 'https:' | json }},
+      "src": "{{ shop.brand.square_logo | image_url: width: 72, height: 72 | prepend: 'https:' }}",
       "sizes": "72x72",
       "purpose": "any"
     },
     {
-      "src": {{ shop.brand.square_logo | image_url: width: 96, height: 96 | prepend: 'https:' | json }},
+      "src": "{{ shop.brand.square_logo | image_url: width: 96, height: 96 | prepend: 'https:' }}",
       "sizes": "96x96",
       "purpose": "any"
     },
     {
-      "src": {{ shop.brand.square_logo | image_url: width: 144, height: 144 | prepend: 'https:' | json }},
+      "src": "{{ shop.brand.square_logo | image_url: width: 144, height: 144 | prepend: 'https:' }}",
       "sizes": "144x144",
       "purpose": "any"
     },
     {
-      "src": {{ shop.brand.square_logo | image_url: width: 168, height: 168 | prepend: 'https:' | json }},
+      "src": "{{ shop.brand.square_logo | image_url: width: 168, height: 168 | prepend: 'https:' }}",
       "sizes": "168x168",
       "purpose": "any"
     },
     {
-      "src": {{ shop.brand.square_logo | image_url: width: 192, height: 192 | prepend: 'https:' | json }},
+      "src": "{{ shop.brand.square_logo | image_url: width: 192, height: 192 | prepend: 'https:' }}",
       "sizes": "192x192",
       "purpose": "any"
     },
     {
-      "src": {{ shop.brand.square_logo | image_url: width: 256, height: 256 | prepend: 'https:' | json }},
+      "src": "{{ shop.brand.square_logo | image_url: width: 256, height: 256 | prepend: 'https:' }}",
       "sizes": "256x256",
       "purpose": "any"
     },
     {
-      "src": {{ shop.brand.square_logo | image_url: width: 512, height: 512 | prepend: 'https:' | json }},
+      "src": "{{ shop.brand.square_logo | image_url: width: 512, height: 512 | prepend: 'https:' }}",
       "sizes": "512x512",
       "purpose": "any"
     }
   ],
   {% endif -%}
-  "start_url": "\/?utm_source=pwa",
-  "scope": "\/",
-  "id": "\/?utm_source=pwa"
+  "start_url": "{{ shop.url | append: '/?utm_source=pwa' }}",
+  "scope": "{{ shop.url }}",
+  "id": "/?utm_source=pwa"
 }
 {% endcapture %}
 

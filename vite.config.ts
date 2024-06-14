@@ -6,7 +6,7 @@ export default defineConfig({
     emptyOutDir: false,
     minify: false,
     rollupOptions: {
-      input: 'styles.css',
+      input: 'src/styles.css',
       output: {
         dir: 'assets',
         assetFileNames: '[name][extname]',

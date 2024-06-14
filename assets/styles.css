@@ -1117,19 +1117,15 @@ video {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
-
 .hover\:bg-accent\/80:hover {
   background-color: hsl(var(--color-accent) / 0.8);
 }
-
 .hover\:bg-primary\/80:hover {
   background-color: hsl(var(--color-primary) / 0.8);
 }
-
 .hover\:bg-secondary\/80:hover {
   background-color: hsl(var(--color-secondary) / 0.8);
 }
-
 @media (min-width: 640px) {
 
   .sm\:block {
@@ -1140,7 +1136,6 @@ video {
     display: none;
   }
 }
-
 @media (min-width: 768px) {
 
   .md\:block {
@@ -1151,7 +1146,6 @@ video {
     display: none;
   }
 }
-
 @media (min-width: 1024px) {
 
   .lg\:block {
@@ -1162,7 +1156,6 @@ video {
     display: none;
   }
 }
-
 @media (min-width: 1280px) {
 
   .xl\:block {
@@ -1173,7 +1166,6 @@ video {
     display: none;
   }
 }
-
 @media (min-width: 1536px) {
 
   .\32xl\:block {
